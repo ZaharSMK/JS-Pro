@@ -1,0 +1,27 @@
+{
+  "name": "js-pro",
+  "version": "1.0.0",
+  "description": "RPG Game",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-loader": "^8.2.2",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.41.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZaharSMK/JS-Pro.git"
+  },
+  "author": "ZaharSMK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZaharSMK/JS-Pro/issues"
+  },
+  "homepage": "https://github.com/ZaharSMK/JS-Pro#readme"
+}

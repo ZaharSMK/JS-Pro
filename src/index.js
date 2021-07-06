@@ -12,8 +12,8 @@ const shots = 3;
 let cycle = 0;
 let direction = 0;
 let bottomPressed = false;
-let pY = canvas.height/2 - spriteW/2;
-let pX = canvas.width/2 - spriteH/2;
+let pY = canvas.height / 2 - spriteW / 2;
+let pX = canvas.width / 2 - spriteH / 2;
 
 rtx.beginPath();
 rtx.moveTo(270, 0);
@@ -89,7 +89,7 @@ img.addEventListener('load', () => {
         pY = canvas.height - spriteH;
       }
       ctx.clearRect(0, 0, 600, 600);
-      ctx.drawImage(img, cycle * spriteW, spriteW*direction, spriteW, spriteH, pX, pY, 48, 48);
+      ctx.drawImage(img, cycle * spriteW, spriteW * direction, spriteW, spriteH, pX, pY, 48, 48);
       if (pY >= canvas.height - spriteH) {
         pY = canvas.height - spriteH;
       }
@@ -102,7 +102,7 @@ img.addEventListener('load', () => {
         pY = 0;
       }
       ctx.clearRect(0, 0, 600, 600);
-      ctx.drawImage(img, cycle * spriteW, spriteW*direction, spriteW, spriteH, pX, pY, 48, 48);
+      ctx.drawImage(img, cycle * spriteW, spriteW * direction, spriteW, spriteH, pX, pY, 48, 48);
     }
     if (bottomPressed === 'left') {
       pX -= 10;
@@ -122,7 +122,7 @@ img.addEventListener('load', () => {
         pX = canvas.width - spriteW;
       }
       ctx.clearRect(0, 0, 600, 600);
-      ctx.drawImage(img, cycle * spriteW, spriteW*direction, spriteW, spriteH, pX, pY, 48, 48);
+      ctx.drawImage(img, cycle * spriteW, spriteW * direction, spriteW, spriteH, pX, pY, 48, 48);
     }
   }, 120);
 });

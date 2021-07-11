@@ -10,14 +10,19 @@ class ClientWorld {
   }
 
   init() {
-    this.engine.renderSpriteFrame({
-      sprite: ['terrain', 'grassPosle'],
-      frame: 0,
-      x: 48,
-      y: 0,
-      w: 50,
-      h: 50,
-    });
+    this.levelCfg.map.forEach((item, indexX) => {
+      item.forEach((i, indexY)=>{
+        this.engine.renderSpriteFrame({
+          sprite: ['terrain', 'grass'],
+          frame: 0,
+          x: indexX*48,
+          y: indexY*48,
+          w: 48,
+          h: 48,
+        });
+      })
+    })
+
   }
 }
 

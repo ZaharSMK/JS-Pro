@@ -15,5 +15,5 @@ export function animateEx(dx, startTime, currentTime, speed, looped = false) {
     time = 1;
   }
 
-  return {offset: dx * time, progress: time};
+  return { offset: dx * time, progress: time };
 }

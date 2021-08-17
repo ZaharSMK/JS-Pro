@@ -30,7 +30,7 @@ class ClientGame {
     return new ClientWorld(this, this.engine, levelCfg);
   }
 
-  getWorld(){
+  getWorld() {
     return this.world;
   }
 
@@ -61,11 +61,11 @@ class ClientGame {
       up: [0, -1],
       down: [0, 1],
     };
-    const {player} = this;
+    const { player } = this;
 
     if (player && player.motionProgress === 1) {
-        const CanMovie = player.moveByCellCoord(dirs[dir][0], dirs[dir][1], (cell) => {
-            return cell.findObjectsByType('grass').length;
+      const CanMovie = player.moveByCellCoord(dirs[dir][0], dirs[dir][1], (cell) => {
+        return cell.findObjectsByType('grass').length;
       });
       if (CanMovie) {
         player.setState(dir);

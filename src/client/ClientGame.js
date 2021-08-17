@@ -75,8 +75,6 @@ class ClientGame {
     }
   }
 
-
-
   static init(cfg) {
     if (!ClientGame.game) {
       ClientGame.game = new ClientGame(cfg);

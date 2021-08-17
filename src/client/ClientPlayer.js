@@ -4,7 +4,7 @@ class ClientPlayer extends ClientGameObject {
   constructor(cfg) {
     super(cfg);
 
-    const  world = cfg.cell.world;
+    const world = cfg.cell.world;
 
     world.game.setPlayer(this);
   }
@@ -12,10 +12,10 @@ class ClientPlayer extends ClientGameObject {
   render(time) {
     super.render(time);
 
-    const  { world } = this;
+    const { world } = this;
 
     world.engine.renderSign({
-      x:this.x + world.cellWidth / 2,
+      x: this.x + world.cellWidth / 2,
       y: this.y - 15,
       minWidth: world.cellWidth,
       maxWidth: world.cellWidth * 1.5,

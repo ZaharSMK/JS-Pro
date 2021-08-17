@@ -11,10 +11,6 @@ class ClientGameObject extends MovableObject {
     const gameObjs = world.game.gameObjects;
     const objCfg = typeof cfg.objCfg === 'string' ? { type: cfg.objCfg } : cfg.objCfg;
 
-    if (objCfg.player) {
-      world.game.setPlayer(this);
-    }
-
     Object.assign(
       this,
       {
@@ -56,12 +52,6 @@ class ClientGameObject extends MovableObject {
       this.cell = newCell;
       newCell.addGameObject(this);
       this.moveTo(newCell.x, newCell.y, true, 200);
-      // const {
-      //   x, y, width, height,
-      // } = newCell;
-      // Object.assign(this, {
-      //   x, y, width, height,
-      // });
     }
   }
 

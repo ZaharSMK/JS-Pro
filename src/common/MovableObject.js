@@ -1,4 +1,4 @@
-import {animateEx, clamp} from './util';
+import { animateEx, clamp } from './util';
 import PositionedObject from './PositionedObject';
 
 class MovableObject extends PositionedObject {
@@ -66,14 +66,14 @@ class MovableObject extends PositionedObject {
       }
     }
     if (smooth) {
-      this.startMotion(newX, newY, speed)
+      this.startMotion(newX, newY, speed);
     } else {
       this.x = newX;
       this.y = newY;
     }
   }
 
-  startMotion (newX, newY, speed) {
+  startMotion(newX, newY, speed) {
     if (this.world) {
       Object.assign(this, {
         motionStartTime: this.world.engine.lastRenderTime,
@@ -82,7 +82,7 @@ class MovableObject extends PositionedObject {
         toY: newY,
         deltaX: newX - this.x,
         deltaY: newY - this.y,
-      })
+      });
     }
   }
 }

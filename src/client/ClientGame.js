@@ -20,6 +20,7 @@ class ClientGame {
 
   setPlayer(player) {
     this.player = player;
+    this.player.playerName = this.cfg.playerName;
   }
 
   createEngine() {
@@ -30,7 +31,7 @@ class ClientGame {
     return new ClientWorld(this, this.engine, levelCfg);
   }
 
-  getWorld(){
+  getWorld() {
     return this.world;
   }
 
@@ -61,11 +62,11 @@ class ClientGame {
       up: [0, -1],
       down: [0, 1],
     };
-    const {player} = this;
+    const { player } = this;
 
     if (player && player.motionProgress === 1) {
-        const CanMovie = player.moveByCellCoord(dirs[dir][0], dirs[dir][1], (cell) => {
-            return cell.findObjectsByType('grass').length;
+      const CanMovie = player.moveByCellCoord(dirs[dir][0], dirs[dir][1], (cell) => {
+        return cell.findObjectsByType('grass').length;
       });
       if (CanMovie) {
         player.setState(dir);
@@ -73,47 +74,6 @@ class ClientGame {
       }
     }
   }
-
-  // initKeys() {
-  //   this.engine.input.onKey({
-  //     ArrowLeft: (keydown) => {
-  //       if (keydown && this.player.motionProgress === 1) {
-  //         const canMovie = this.player.moveByCellCoord(-1, 0, (cell) => cell.findObjectsByType('grass').length);
-  //         if (canMovie) {
-  //           this.player.setState('left');
-  //           this.player.once('motion-stopped', () => this.player.setState('main'));
-  //         }
-  //       }
-  //       },
-  //     ArrowRight: (keydown) => {
-  //       if (keydown && this.player.motionProgress === 1) {
-  //         const canMovie = this.player.moveByCellCoord(1, 0, (cell) => cell.findObjectsByType('grass').length);
-  //         if (canMovie) {
-  //           this.player.setState('right');
-  //           this.player.once('motion-stopped', () => this.player.setState('main'));
-  //         }
-  //       }
-  //     },
-  //     ArrowUp: (keydown) => {
-  //       if (keydown && this.player.motionProgress === 1) {
-  //         const canMovie = this.player.moveByCellCoord(0, -1, (cell) => cell.findObjectsByType('grass').length);
-  //         if (canMovie) {
-  //           this.player.setState('up');
-  //           this.player.once('motion-stopped', () => this.player.setState('main'));
-  //         }
-  //       }
-  //     },
-  //     ArrowDown: (keydown) => {
-  //       if (keydown && this.player.motionProgress === 1) {
-  //         const canMovie = this.player.moveByCellCoord(0, 1, (cell) => cell.findObjectsByType('grass').length);
-  //         if (canMovie) {
-  //           this.player.setState('down');
-  //           this.player.once('motion-stopped', () => this.player.setState('main'));
-  //         }
-  //       }
-  //     },
-  //   });
-  // }
 
   static init(cfg) {
     if (!ClientGame.game) {
